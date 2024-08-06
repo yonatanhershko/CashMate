@@ -1,6 +1,6 @@
 export function HomePage() {
     return (
-        <section>
+        <section className="">
             <h1>Home sweet Home</h1>
         </section >
     )

@@ -10,10 +10,10 @@ import { UserMsg } from './cmps/UserMsg.jsx'
 
 export function RootCmp() {
     return (
-        <div className="main-container">
-            <AppHeader />
+        <div className=" main-container">
             <UserMsg />
-            <main>
+            <AppHeader />
+            <main className='main-layout'>
                 <Routes>
                     <Route path="" element={<HomePage />} />
                     <Route path="wallet" element={<WalletIndex />} />

@@ -6,16 +6,20 @@ export function AppHeader() {
 	const navigate = useNavigate()
 
 	return (
-		<header className="app-header full">
-			<nav>
-				<NavLink to="/" className="logo">
-					Wallet
-				</NavLink>
-				<NavLink to="wallet" className="logo">
-					My Wallet
-				</NavLink>
+		<header className="app-header ">
+			<div className='header-info main-layout'>
+				<nav >
+					<NavLink to="/" className="logo">
+						Wallet
+					</NavLink>
+					<NavLink to="wallet" className="logo">
+						My Wallet
+					</NavLink>
 
-			</nav>
+				</nav>
+
+			</div>
+
 		</header>
 	)
 }
