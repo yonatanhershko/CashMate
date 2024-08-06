@@ -1,12 +1,12 @@
 import { walletService } from '../../services/wallet'
 import { store } from '../store'
-import { ADD_BOARD, REMOVE_BOARD, SET_BOARDS, SET_BOARD, UPDATE_BOARD, ADD_BOARD_MSG } from '../reducers/board.reducer'
+import { ADD_WALLET, REMOVE_WALLET, SET_WALLETS, SET_WALLET, UPDATE_WALLET, ADD_WALLET_MSG } from '../reducers/wallet.reducer'
 
 
-export async function loadBoard(boardId) {
+export async function loadWallet(boardId) {
     try {
         const board = await walletService.getById(boardId)
-        store.dispatch(getCmdSetBoard(board))
+        store.dispatch(getCmdSetWallet(board))
     } catch (err) {
         console.log('Cannot load board', err)
         throw err
@@ -14,42 +14,42 @@ export async function loadBoard(boardId) {
 }
 
 
-export async function removeBoard(boardId) {
+export async function removeWallet(boardId) {
     try {
         await walletService.remove(boardId)
-        store.dispatch(getCmdRemoveBoard(boardId))
+        store.dispatch(getCmdRemoveWallet(boardId))
     } catch (err) {
         console.log('Cannot remove board', err)
         throw err
     }
 }
 
-export async function addBoard(board) {
+export async function addWallet(board) {
     try {
-        const savedBoard = await walletService.save(board)
-        store.dispatch(getCmdAddBoard(savedBoard))
-        return savedBoard
+        const savedWallet = await walletService.save(board)
+        store.dispatch(getCmdAddWallet(savedWallet))
+        return savedWallet
     } catch (err) {
         console.log('Cannot add board', err)
         throw err
     }
 }
 
-export async function updateBoard(board) {
+export async function updateWallet(board) {
     try {
-        const savedBoard = await walletService.save(board)
-        store.dispatch(getCmdUpdateBoard(savedBoard))
-        return savedBoard
+        const savedWallet = await walletService.save(board)
+        store.dispatch(getCmdUpdateWallet(savedWallet))
+        return savedWallet
     } catch (err) {
         console.log('Cannot save board', err)
         throw err
     }
 }
 
-export async function addBoardMsg(boardId, txt) {
+export async function addWalletMsg(boardId, txt) {
     try {
-        const msg = await walletService.addBoardMsg(boardId, txt)
-        store.dispatch(getCmdAddBoardMsg(msg))
+        const msg = await walletService.addWalletMsg(boardId, txt)
+        store.dispatch(getCmdAddWalletMsg(msg))
         return msg
     } catch (err) {
         console.log('Cannot add board msg', err)
@@ -58,50 +58,50 @@ export async function addBoardMsg(boardId, txt) {
 }
 
 // Command Creators:
-function getCmdSetBoards(boards) {
+// function getCmdSetWallets(boards) {
+//     return {
+//         type: SET_WALLETS,
+//         boards
+//     }
+// }
+function getCmdSetWallet(board) {
     return {
-        type: SET_BOARDS,
-        boards
-    }
-}
-function getCmdSetBoard(board) {
-    return {
-        type: SET_BOARD,
+        type: SET_WALLET,
         board
     }
 }
-function getCmdRemoveBoard(boardId) {
+function getCmdRemoveWallet(boardId) {
     return {
-        type: REMOVE_BOARD,
+        type: REMOVE_WALLET,
         boardId
     }
 }
-function getCmdAddBoard(board) {
+function getCmdAddWallet(board) {
     return {
-        type: ADD_BOARD,
+        type: ADD_WALLET,
         board
     }
 }
-function getCmdUpdateBoard(board) {
+function getCmdUpdateWallet(board) {
     return {
-        type: UPDATE_BOARD,
+        type: UPDATE_WALLET,
         board
     }
 }
-function getCmdAddBoardMsg(msg) {
+function getCmdAddWalletMsg(msg) {
     return {
-        type: ADD_BOARD_MSG,
+        type: ADD_WALLET_MSG,
         msg
     }
 }
 
 // unitTestActions()
 async function unitTestActions() {
-    await addBoard(walletService.getEmptyWallet())
-    await updateBoard({
+    await addWallet(walletService.getEmptyWallet())
+    await updateWallet({
         _id: 'm1oC7',
-        title: 'Board-Good',
+        title: 'Wallet-Good',
     })
-    await removeBoard('m1oC7')
-    // TODO unit test addBoardMsg
+    await removeWallet('m1oC7')
+    // TODO unit test addWalletMsg
 }

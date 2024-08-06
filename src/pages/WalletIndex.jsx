@@ -11,7 +11,7 @@ import { Filter } from '../cmps/BoardFilter'
 
 export function WalletIndex() {
 
-    const wallet = useSelector(storeState => storeState.boardModule.wallet)
+    const wallet = useSelector(storeState => storeState.walletModule.wallet)
 
     // useEffect(() => {
     //     loadBoards(filterBy)

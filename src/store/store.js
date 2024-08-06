@@ -1,10 +1,10 @@
 import { legacy_createStore as createStore, combineReducers } from 'redux'
 
-import { boardReducer } from './reducers/board.reducer'
+import { walletReducer } from './reducers/wallet.reducer'
 import { systemReducer } from './reducers/system.reducer'
 
 const rootReducer = combineReducers({
-    boardModule: boardReducer,
+    walletModule: walletReducer,
     systemModule: systemReducer,
 })
 
