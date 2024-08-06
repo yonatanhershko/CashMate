@@ -28,9 +28,10 @@ export function walletReducer(state = initialState, action) {
         case ADD_WALLET:
             newState = { ...state, wallets: [...state.wallets, action.wallet] }
             break
-        case UPDATE_WALLET:
-            wallets = state.wallets.map(wallet => (wallet._id === action.wallet._id) ? action.wallet : wallet)
-            newState = { ...state, wallets }
+            case UPDATE_WALLET:
+                wallets = state.wallets.map(wallet => (wallet._id === action.wallet._id) ? action.wallet : wallet)
+                // newState = { ...state, wallet: action.wallet }
+                newState = { ...state, wallets, wallet: action.wallet }
             break
         case ADD_WALLET_MSG:
             newState = { ...state, wallet: { ...state.wallet, msgs: [...state.wallet.msgs || [], action.msg] } }

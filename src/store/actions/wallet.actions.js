@@ -37,11 +37,14 @@ export async function addWallet(wallet) {
 
 export async function updateWallet(wallet) {
     try {
-        const savedWallet = await walletService.save(wallet)
-        store.dispatch(getCmdUpdateWallet(savedWallet))
-        return savedWallet
+        const updatedWallet = await walletService.save(wallet)
+        store.dispatch({
+            type: UPDATE_WALLET,
+            wallet: updatedWallet
+        })
+        return updatedWallet
     } catch (err) {
-        console.log('Cannot save wallet', err)
+        console.log('Cannot update wallet', err)
         throw err
     }
 }

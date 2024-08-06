@@ -71,7 +71,7 @@ async function _createWallet() {
             title: 'Yona Wallet',
             description: 'A demo wallet with dark mode',
             balance: 1500,
-            currency: 'ILS',
+            currency: '₪',
             archivedAt: null,
             createdBy: {
                 id: 'u101',
@@ -79,15 +79,7 @@ async function _createWallet() {
                 img: 'https://example.com/john-doe-profile.jpg'
             },
             style: {
-                mode: 'dark',
-                darkMode: {
-                    backgroundColor: '#1a1a1a',
-                    textColor: '#ffffff',
-                },
-                darkMode: {
-                    backgroundColor: '#1a1a1a',
-                    textColor: '#ffffff',
-                }
+                mode: 'light'
             },
             members: [
                 {
