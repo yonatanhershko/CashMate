@@ -6,7 +6,7 @@ const STORAGE_KEY = 'wallet'
 
 _createBoards()
 
-export const boardService = {
+export const walletService = {
     query,
     getById,
     save,
@@ -14,7 +14,7 @@ export const boardService = {
     addBoardMsg
 }
 
-window.cs = boardService
+window.cs = walletService
 
 
 async function query(filterBy = { name: '' }) {

@@ -1,17 +1,17 @@
 import { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 
-// import { loadBoards, addBoard, updateBoard, removeBoard, addBoardMsg } from '../store/actions/board.actions'
+// import { loadwallet, addBoard, updateBoard, removeBoard, addBoardMsg } from '../store/actions/board.actions'
 
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service'
-import { boardService } from '../services/board'
+import { walletService } from '../services/wallet/index'
 
 import { WalletPreview } from '../cmps/WalletPreview'
 import { Filter } from '../cmps/BoardFilter'
 
 export function WalletIndex() {
 
-    const boards = useSelector(storeState => storeState.boardModule.boards)
+    const wallet = useSelector(storeState => storeState.boardModule.wallet)
 
     // useEffect(() => {
     //     loadBoards(filterBy)
@@ -23,7 +23,7 @@ export function WalletIndex() {
                 <h2>My Wallet</h2>
             </header>
             <WalletPreview
-                boards={boards} />
+                wallet={wallet} />
         </main>
     )
 }

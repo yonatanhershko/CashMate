@@ -1,6 +1,6 @@
 import { httpService } from '../http.service'
 
-export const boardService = {
+export const walletService = {
     query,
     getById,
     save,

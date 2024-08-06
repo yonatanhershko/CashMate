@@ -2,8 +2,8 @@ const { DEV, VITE_LOCAL } = import.meta.env
 
 import { getRandomIntInclusive, makeId } from '../util.service'
 
-import { boardService as local } from './board.service.local'
-import { boardService as remote } from './board.service.remote'
+import { walletService as local } from './wallet.service.local'
+import { walletService as remote } from './wallet.service.remote'
 
 function getEmptyWallet() {
 	return {
@@ -27,12 +27,12 @@ function getEmptyWallet() {
 
 
 const service = VITE_LOCAL === 'true' ? local : remote
-export const boardService = { getEmptyWallet, ...service }
+export const walletService = { getEmptyWallet, ...service }
 
 // Easy access to this service from the dev tools console
 // when using script - dev / dev:local
 
-if (DEV) window.boardService = boardService
+if (DEV) window.walletService = walletService
 
 
 
