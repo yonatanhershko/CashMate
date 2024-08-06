@@ -17,7 +17,6 @@ export function WalletIndex() {
     return (
         <main className="index">
             <header>
-                <h2>My Wallet</h2>
             </header>
             <WalletPreview wallet={wallet} />
         </main>

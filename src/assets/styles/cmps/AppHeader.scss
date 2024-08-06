@@ -16,7 +16,7 @@
         width: 100%;
         align-items: center;
         gap: 1em;
-        
+        text-decoration: none;
         font-size: .8em;
 
         .active {
@@ -27,33 +27,11 @@
             font-size: 1.4em;
             font-weight: bold;
             margin-inline-end: 2em;
+            text-decoration: none;
+            color: $txt-clr1;
+
         }
 
-        .login-link {
-            margin-inline-start: auto;
-        }
-
-        button {
-            margin-inline-end: 0;
-        }
-    }
-
-    .user-info {
-        display: flex;
-        align-items: center;
-        margin-inline-start: auto;
-
-        color: $txt-clr1;
-
-        img {
-            width: 32px;
-            aspect-ratio: 1;
-            border-radius: 50%;
-        }
-        
-        .btn-link {
-            color:$txt-clr1;
-        }
     }
 
 
