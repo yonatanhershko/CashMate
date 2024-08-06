@@ -3,7 +3,6 @@ import { NavLink, Outlet } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
 export function AboutUs() {
-    const [count, setCount] = useState(100)
 
     function onTellMeMore() {
         console.log('Telling you more')
@@ -11,10 +10,7 @@ export function AboutUs() {
     return (
         <section>
             <h2>About Us</h2>
-            <nav>
-                <NavLink to="team">Team</NavLink> |
-                <NavLink to="vision">Vision</NavLink>
-            </nav>
+        
 
             <section>
                 <Outlet />
