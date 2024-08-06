@@ -15,7 +15,7 @@ export function boardReducer(state = initialState, action) {
     var boards
     switch (action.type) {
         case SET_BOARDS:
-            newState = { ...state, boards: action.boards }
+            newState = { ...state, boards: action.boards }//delete
             break
         case SET_BOARD:
             newState = { ...state, board: action.board }

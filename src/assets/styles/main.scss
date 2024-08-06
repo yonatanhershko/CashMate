@@ -8,9 +8,6 @@
 @import "basics/helpers";
 @import "basics/layout";
 @import "basics/base";
-@import "basics/links";
-@import "basics/forms";
-
 
 // pages
 @import "RootCmp";
@@ -28,5 +25,5 @@
 @import "cmps/UserMsg";
 
 @import "cmps/BoardFilter";
-@import "cmps/BoardList";
+@import "cmps/WalletPreview";
 @import "cmps/BoardPreview";

@@ -1,30 +1,28 @@
 import { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 
-import { loadBoards, addBoard, updateBoard, removeBoard, addBoardMsg } from '../store/actions/board.actions'
+// import { loadBoards, addBoard, updateBoard, removeBoard, addBoardMsg } from '../store/actions/board.actions'
 
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service'
 import { boardService } from '../services/board'
 
-import { BoardList } from '../cmps/BoardList'
+import { WalletPreview } from '../cmps/WalletPreview'
 import { Filter } from '../cmps/BoardFilter'
 
 export function WalletIndex() {
 
     const boards = useSelector(storeState => storeState.boardModule.boards)
-    const [filterBy, setFilterBy] = useState(boardService.getDefaultFilter())
 
-    useEffect(() => {
-        loadBoards(filterBy)
-    }, [filterBy])
+    // useEffect(() => {
+    //     loadBoards(filterBy)
+    // }, [filterBy])
 
     return (
         <main className="index">
             <header>
-                <h2>Boards</h2>
+                <h2>My Wallet</h2>
             </header>
-            {/* <Filter filterBy={filterBy} setFilterBy={setFilterBy} /> */}
-            <BoardList
+            <WalletPreview
                 boards={boards} />
         </main>
     )

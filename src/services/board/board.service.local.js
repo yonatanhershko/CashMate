@@ -2,7 +2,7 @@
 import { storageService } from '../async-storage.service'
 import { loadFromStorage, makeId, saveToStorage } from '../util.service'
 
-const STORAGE_KEY = 'board'
+const STORAGE_KEY = 'wallet'
 
 _createBoards()
 

@@ -2,15 +2,6 @@ import { boardService } from '../../services/board'
 import { store } from '../store'
 import { ADD_BOARD, REMOVE_BOARD, SET_BOARDS, SET_BOARD, UPDATE_BOARD, ADD_BOARD_MSG } from '../reducers/board.reducer'
 
-export async function loadBoards(filterBy) {
-    try {
-        const boards = await boardService.query(filterBy)
-        store.dispatch(getCmdSetBoards(boards))
-    } catch (err) {
-        console.log('Cannot load boards', err)
-        throw err
-    }
-}
 
 export async function loadBoard(boardId) {
     try {
@@ -106,8 +97,7 @@ function getCmdAddBoardMsg(msg) {
 
 // unitTestActions()
 async function unitTestActions() {
-    await loadBoards()
-    await addBoard(boardService.getEmptyBoard())
+    await addBoard(boardService.getEmptyWallet())
     await updateBoard({
         _id: 'm1oC7',
         title: 'Board-Good',

@@ -5,7 +5,7 @@ import { getRandomIntInclusive, makeId } from '../util.service'
 import { boardService as local } from './board.service.local'
 import { boardService as remote } from './board.service.remote'
 
-function getEmptyBoard() {
+function getEmptyWallet() {
 	return {
         title: '',
         isStarred: false,
@@ -23,19 +23,55 @@ function getEmptyBoard() {
     
 }
 
-function getDefaultFilter() {
-    return {
-        txt: '',
-        minSpeed: '',
-        sortField: '',
-        sortDir: '',
-    }
-}
+
+
 
 const service = VITE_LOCAL === 'true' ? local : remote
-export const boardService = { getEmptyBoard, getDefaultFilter, ...service }
+export const boardService = { getEmptyWallet, ...service }
 
 // Easy access to this service from the dev tools console
 // when using script - dev / dev:local
 
 if (DEV) window.boardService = boardService
+
+
+
+// wallet
+// const wallet = {
+//     id: 'unique-id-123',
+//     balance: 0,
+//     currency: 'ILS',
+//     style: {
+//         mode: 'dark',
+//         darkMode: {
+//             backgroundColor: '#1a1a1a',
+//             textColor: '#ffffff',
+//         },
+//         lightMode: {
+//             backgroundColor: '#ffffff',
+//             textColor: '#000000',
+//         }
+//     },
+//     activities: [
+//         // Example activity
+//         {
+//             id: 'activity-1',
+//             type: 'add',
+//             amount: 100,
+//             date: new Date('2024-08-06T10:00:00'),
+//             description: 'Salary deposit'
+//         },
+//     ],
+//     members: [
+//         // Example member
+//         {
+//             id: 'member-1',
+//             name: 'John Doe',
+//             img:''
+//         },
+//     ],
+//     createdBy: 'creator-id',
+//     title: 'My Wallet',
+//     description: '',
+//     isLocked: true,
+// }

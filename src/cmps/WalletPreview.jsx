@@ -1,6 +1,6 @@
 import { BoardPreview } from './BoardPreview'
 
-export function BoardList({ boards, onRemoveBoard, onUpdateBoard }) {
+export function WalletPreview({ boards, onRemoveBoard, onUpdateBoard }) {
 
 
     return <section>
