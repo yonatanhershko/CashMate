@@ -1,0 +1,62 @@
+.money-transfers {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .transfers-pay {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background-color: rgb(128, 6, 0);
+        width: 32px;
+        height: 32px;
+        border-radius: 4px;
+        transition: background-color 0.1s ease;
+        cursor: pointer;
+
+        &:hover {
+            background-color: rgb(146, 21, 15);
+        }
+
+        .transfers-btn{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+    
+            height: 20px;
+            width: 20px;
+            font-size: 20px;
+
+        }
+    }
+
+    .transfers-income {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background-color: green;
+        width: 32px;
+        height: 32px;
+        border-radius: 4px;
+        transition: background-color 0.1s ease;
+        cursor: pointer;
+
+        &:hover {
+            background-color: rgb(15, 158, 15);
+        }
+
+        .transfers-btn{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+    
+            height: 20px;
+            width: 20px;
+            font-size: 20px;
+        }
+    }
+
+
+}

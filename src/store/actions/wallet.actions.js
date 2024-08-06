@@ -38,9 +38,6 @@ export async function addWallet(wallet) {
 export async function updateWallet(wallet) {
     try {
         const savedWallet = await walletService.save(wallet)
-        console.log(savedWallet)
-        
-
         store.dispatch(getCmdUpdateWallet(savedWallet))
         return savedWallet
     } catch (err) {
