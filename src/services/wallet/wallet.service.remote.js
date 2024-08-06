@@ -5,31 +5,31 @@ export const walletService = {
     getById,
     save,
     remove,
-    addBoardMsg
+    addWalletMsg
 }
 
-async function query(filterBy = { txt: '', price: 0 }) {
-    return httpService.get(`board`, filterBy)
+async function query() {
+    return httpService.get(`wallet`)
 }
 
-function getById(boardId) {
-    return httpService.get(`board/${boardId}`)
+function getById(walletId) {
+    return httpService.get(`wallet/${walletId}`)
 }
 
-async function remove(boardId) {
-    return httpService.delete(`board/${boardId}`)
+async function remove(walletId) {
+    return httpService.delete(`wallet/${walletId}`)
 }
-async function save(board) {
-    var savedBoard
-    if (board._id) {
-        savedBoard = await httpService.put(`board/${board._id}`, board)
+async function save(wallet) {
+    var savedWallet
+    if (wallet._id) {
+        savedWallet = await httpService.put(`wallet/${wallet._id}`, wallet)
     } else {
-        savedBoard = await httpService.post('board', board)
+        savedWallet = await httpService.post('wallet', wallet)
     }
-    return savedBoard
+    return savedWallet
 }
 
-async function addBoardMsg(boardId, txt) {
-    const savedMsg = await httpService.post(`board/${boardId}/msg`, {txt})
+async function addWalletMsg(walletId, txt) {
+    const savedMsg = await httpService.post(`wallet/${walletId}/msg`, {txt})
     return savedMsg
 }

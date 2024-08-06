@@ -1,10 +1,12 @@
-
-
-export function WalletPreview({ onRemoveBoard, onUpdateBoard }) {
-
-    return <section>
+export function WalletPreview({ wallet }) {
+    return (
         <section className="wallet-preview">
-           <h1>a</h1>
+            <h1>{wallet.title}</h1>
+            <p>{wallet.description}</p>
+            <div className="wallet-balance">
+                <span>Balance: </span>
+                <span>{wallet.balance} </span>
+            </div>
         </section>
-    </section>
+    )
 }

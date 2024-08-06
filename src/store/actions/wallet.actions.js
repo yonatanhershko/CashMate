@@ -3,89 +3,82 @@ import { store } from '../store'
 import { ADD_WALLET, REMOVE_WALLET, SET_WALLETS, SET_WALLET, UPDATE_WALLET, ADD_WALLET_MSG } from '../reducers/wallet.reducer'
 
 
-export async function loadWallet(boardId) {
+export async function loadWallet(walletId) {
     try {
-        const board = await walletService.getById(boardId)
-        store.dispatch(getCmdSetWallet(board))
+        const wallet = await walletService.getById(walletId)
+        store.dispatch(getCmdSetWallet(wallet))
     } catch (err) {
-        console.log('Cannot load board', err)
+        console.log('Cannot load wallet', err)
         throw err
     }
 }
 
 
-export async function removeWallet(boardId) {
+export async function removeWallet(walletId) {
     try {
-        await walletService.remove(boardId)
-        store.dispatch(getCmdRemoveWallet(boardId))
+        await walletService.remove(walletId)
+        store.dispatch(getCmdRemoveWallet(walletId))
     } catch (err) {
-        console.log('Cannot remove board', err)
+        console.log('Cannot remove wallet', err)
         throw err
     }
 }
 
-export async function addWallet(board) {
+export async function addWallet(wallet) {
     try {
-        const savedWallet = await walletService.save(board)
+        const savedWallet = await walletService.save(wallet)
         store.dispatch(getCmdAddWallet(savedWallet))
         return savedWallet
     } catch (err) {
-        console.log('Cannot add board', err)
+        console.log('Cannot add wallet', err)
         throw err
     }
 }
 
-export async function updateWallet(board) {
+export async function updateWallet(wallet) {
     try {
-        const savedWallet = await walletService.save(board)
+        const savedWallet = await walletService.save(wallet)
         store.dispatch(getCmdUpdateWallet(savedWallet))
         return savedWallet
     } catch (err) {
-        console.log('Cannot save board', err)
+        console.log('Cannot save wallet', err)
         throw err
     }
 }
 
-export async function addWalletMsg(boardId, txt) {
+export async function addWalletMsg(walletId, txt) {
     try {
-        const msg = await walletService.addWalletMsg(boardId, txt)
+        const msg = await walletService.addWalletMsg(walletId, txt)
         store.dispatch(getCmdAddWalletMsg(msg))
         return msg
     } catch (err) {
-        console.log('Cannot add board msg', err)
+        console.log('Cannot add wallet msg', err)
         throw err
     }
 }
 
-// Command Creators:
-// function getCmdSetWallets(boards) {
-//     return {
-//         type: SET_WALLETS,
-//         boards
-//     }
-// }
-function getCmdSetWallet(board) {
+function getCmdSetWallet(wallet) {
     return {
         type: SET_WALLET,
-        board
+        wallet
     }
 }
-function getCmdRemoveWallet(boardId) {
+function getCmdRemoveWallet(walletId) {
     return {
         type: REMOVE_WALLET,
-        boardId
+        walletId
     }
 }
-function getCmdAddWallet(board) {
+function getCmdAddWallet(wallet) {
     return {
         type: ADD_WALLET,
-        board
+        wallet
     }
 }
-function getCmdUpdateWallet(board) {
+function getCmdUpdateWallet(wallet) {
     return {
         type: UPDATE_WALLET,
-        board
+        wallet
     }
 }
 function getCmdAddWalletMsg(msg) {

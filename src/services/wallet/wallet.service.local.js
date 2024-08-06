@@ -19,7 +19,6 @@ window.cs = walletService
 
 async function query() {
     var wallets = await storageService.query(STORAGE_KEY)
-
     return wallets
 }
 
