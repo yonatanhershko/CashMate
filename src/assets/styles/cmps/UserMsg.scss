@@ -24,11 +24,11 @@
 }
 
 .user-msg button {
-    background-color: $bg-clr2;
+    background-color: var(--bg-clr2);
     padding: 1px 6px;
     border:0;
     border-radius: 50%;
-    color: $txt-clr1;
+    color: var(--txt-clr1)
 }
 
 .user-msg.success {

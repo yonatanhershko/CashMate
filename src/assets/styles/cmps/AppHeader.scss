@@ -1,7 +1,7 @@
 .app-header {
 
     width: 100%;
-    background-color:$bg-clr2;
+    background-color: var(--bg-clr1);
   
     
 
@@ -20,7 +20,7 @@
         font-size: .8em;
 
         .active {
-            color: $txt-clr1;
+            color: var(--txt-clr2)
         }
 
         .logo {
@@ -28,7 +28,7 @@
             font-weight: bold;
             margin-inline-end: 2em;
             text-decoration: none;
-            color: $txt-clr1;
+            color: var(--txt-clr2)
 
         }
 

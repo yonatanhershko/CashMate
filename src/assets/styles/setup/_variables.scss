@@ -1,27 +1,36 @@
 // Colors
 
+//Light Colors
+$light-bg-clr1: #262626;
 $light-bg-clr2: #F2F1F0;
+
 $light-txt-clr1: #262626;
+$light-txt-clr2: #F2F1F0;
 
-
+//Dark Colors
+$dark-bg-clr1: #F2F1F0;
 $dark-bg-clr2: #262626;
+
 $dark-txt-clr1: #F2F1F0;
+$dark-txt-clr2: #262626;
 
 
-$txt-clr2: #222;
-$bg-clr2: $dark-bg-clr2;
-$txt-clr1: $dark-txt-clr1;
 
+//Theme
 [data-theme='light'] {
+  --bg-clr1: #{$light-bg-clr1};
   --bg-clr2: #{$light-bg-clr2};
+
   --txt-clr1: #{$light-txt-clr1};
-  --txt-clr2: #{$txt-clr2};
+  --txt-clr2: #{$light-txt-clr2};
 }
 
 [data-theme='dark'] {
+  --bg-clr1: #{$dark-bg-clr1};
   --bg-clr2: #{$dark-bg-clr2};
+
   --txt-clr1: #{$dark-txt-clr1};
-  --txt-clr2: #{$txt-clr2};
+  --txt-clr2: #{$dark-txt-clr2};
 }
 
 body {
@@ -33,3 +42,6 @@ body {
 $mobile-breakpoint: 460px;
 $narrow-breakpoint: 720px;
 $normal-breakpoint: 960px;
+
+//colors to add 
+$bg-clr3: #f4e0cb;
