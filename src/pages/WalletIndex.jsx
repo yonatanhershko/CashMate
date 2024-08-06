@@ -6,7 +6,8 @@ import { loadWallet, updateWallet } from '../store/actions/wallet.actions'
 
 export function WalletIndex() {
     const wallet = useSelector(storeState => storeState.walletModule.wallet)
-    const walletId = 'ZxTAol' // By user.wallet._id
+           
+    const walletId = "HQhiyo"  // By user.wallet._id
     const [theme, setTheme] = useState('')
 
     useEffect(() => {
@@ -22,6 +23,8 @@ export function WalletIndex() {
 
     async function switchTheme(e) {
         const newTheme = e.target.checked ? 'dark' : 'light'
+        // console.log(newTheme)
+        
         if (wallet) {
             const updatedWallet = {
                 ...wallet,
@@ -43,8 +46,6 @@ export function WalletIndex() {
     }
     
     if (!wallet) return null
-    // console.log(theme)
-
     return (
         <main className="index">
             <label className="switch">
