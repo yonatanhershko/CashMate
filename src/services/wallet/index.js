@@ -49,41 +49,43 @@ if (DEV) window.walletService = walletService
 
 
 // wallet
-// const wallet = {
-//     id: 'unique-id-123',
-//     balance: 0,
-//     currency: 'ILS',
-//     style: {
-//         mode: 'dark',
-//         darkMode: {
-//             backgroundColor: '#1a1a1a',
-//             textColor: '#ffffff',
-//         },
-//         lightMode: {
-//             backgroundColor: '#ffffff',
-//             textColor: '#000000',
-//         }
-//     },
-//     activities: [
-//         // Example activity
-//         {
-//             id: 'activity-1',
-//             type: 'add',
-//             amount: 100,
-//             date: new Date('2024-08-06T10:00:00'),
-//             description: 'Salary deposit'
-//         },
-//     ],
-//     members: [
-//         // Example member
-//         {
-//             id: 'member-1',
-//             name: 'John Doe',
-//             imgUrl:''
-//         },
-//     ],
-//     createdBy: 'creator-id',
-//     title: 'My Wallet',
-//     description: '',
-//     isLocked: true,
-// }
+const wallet = {
+    id: 'unique-id-123',
+    balance: 0,
+    currency: 'ILS',
+    style: {
+        mode: 'dark',
+        darkMode: {
+            backgroundColor: '#1a1a1a',
+            textColor: '#ffffff',
+        },
+        lightMode: {
+            backgroundColor: '#ffffff',
+            textColor: '#000000',
+        }
+    },
+    activities: [
+        // Example activity
+        {
+            id: 'activity-1',
+            type: 'add',
+            amount: 100,
+            date: new Date('2024-08-06T10:00:00'),
+            description: 'Salary deposit',
+            memberId: 'member-1'  // Add this line to associate the activity with a member
+
+        },
+    ],
+    members: [
+        // Example member
+        {
+            id: 'member-1',
+            name: 'John Doe',
+            imgUrl:''
+        },
+    ],
+    createdBy: 'creator-id',
+    title: 'My Wallet',
+    description: '',
+    isLocked: true,
+}

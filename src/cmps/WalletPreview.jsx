@@ -4,9 +4,10 @@ import { WalletDetails } from "./WalletDetails"
 export function WalletPreview({ wallet }) {
 
     const member = wallet.members
-    function generateRobohashUrl(id) {
-        return `https://robohash.org/${id}?set=set1`
-    }
+    
+    // function generateRobohashUrl(id) {
+    //     return `https://robohash.org/${id}?set=set1`
+    // }
     // console.log(wallet)
 
     return (
@@ -18,11 +19,13 @@ export function WalletPreview({ wallet }) {
                 </div>
             </div>
             <p>{wallet.description}</p>
-            <img className="user-img" src={generateRobohashUrl(member._id)} alt={member.name} style={{ width: '100px', height: '100px' }} />
+            {/* <img className="user-img" src={generateRobohashUrl(member._id)} alt={member.name} style={{ width: '100px', height: '100px' }} /> */}
 
-            <WalletDetails />
+            <WalletDetails
+                wallet={wallet}
+            />
 
-            <MoneyTransfers/>
+            <MoneyTransfers />
 
         </section>
     )

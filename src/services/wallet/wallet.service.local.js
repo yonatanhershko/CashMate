@@ -103,21 +103,48 @@ async function _createWallet() {
                     type: 'add',
                     amount: 1000,
                     date: Date.now() - 86400000, // Yesterday
-                    description: 'Initial deposit'
+                    description: 'Initial deposit',
+                    memberId: 'u101'
                 },
                 {
                     id: 'a102',
                     type: 'add',
                     amount: 700,
                     date: Date.now() - 3600000, // 1 hour ago
-                    description: 'Salary'
+                    description: 'Salary',
+                    memberId: 'u102'
                 },
                 {
                     id: 'a103',
                     type: 'remove',
                     amount: 200,
                     date: Date.now(), // Now
-                    description: 'Groceries'
+                    description: 'Groceries',
+                    memberId: 'u101'
+                },
+                {
+                    id: 'a104',
+                    type: 'add',
+                    amount: 1000,
+                    date: Date.now() - 86400000, // Yesterday
+                    description: 'Initial deposit',
+                    memberId: 'u102'
+                },
+                {
+                    id: 'a105',
+                    type: 'add',
+                    amount: 700,
+                    date: Date.now() - 3600000, // 1 hour ago
+                    description: 'Salary',
+                    memberId: 'u102'
+                },
+                {
+                    id: 'a106',
+                    type: 'remove',
+                    amount: 200,
+                    date: Date.now(), // Now
+                    description: 'Groceries',
+                    memberId: 'u101'
                 }
             ],
             isLocked: false
