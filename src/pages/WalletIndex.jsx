@@ -7,7 +7,7 @@ import { loadWallet, updateWallet } from '../store/actions/wallet.actions'
 export function WalletIndex() {
     const wallet = useSelector(storeState => storeState.walletModule.wallet)
            
-    const walletId = "bVmqez"  // By user.wallet._id
+    const walletId = "3ZsGec"  // By user.wallet._id
     const [theme, setTheme] = useState('')
 
     useEffect(() => {

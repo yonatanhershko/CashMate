@@ -1,7 +1,8 @@
-.money-transfers {
+.money-transfers-container {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 10px;
 
     .transfers-pay {
         display: flex;
@@ -9,8 +10,8 @@
         justify-content: center;
 
         background-color: rgb(128, 6, 0);
-        width: 32px;
-        height: 32px;
+        width: 5em;
+        height: 5em;
         border-radius: 4px;
         transition: background-color 0.1s ease;
         cursor: pointer;
@@ -37,8 +38,8 @@
         justify-content: center;
 
         background-color: green;
-        width: 32px;
-        height: 32px;
+        width: 5em;
+        height: 5em;
         border-radius: 4px;
         transition: background-color 0.1s ease;
         cursor: pointer;

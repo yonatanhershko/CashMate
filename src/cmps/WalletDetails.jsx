@@ -1,4 +1,4 @@
-// WalletDetails.js
+
 import React from 'react'
 
 export function WalletDetails({ wallet }) {
@@ -29,12 +29,13 @@ export function WalletDetails({ wallet }) {
                                 className="activity-member-img"
                                 src={generateRobohashUrl(member.id)}
                                 alt={`Member ${member.name}`}
+                                title={member.name}
                             />
                             <div className="activity-content">
-                                <h4>{member.name}</h4>
+                                {/* <h4>{member.name}</h4> */}
                                 <p>{activity.description}</p>
-                                <span>{activity.amount}</span>
-                                <span>{activity.type}</span>
+                                <span> <span>{activity.type}</span>{activity.amount}</span>
+        
                                 <span>{new Date(activity.date).toLocaleString()}</span>
                             </div>
                         </div>

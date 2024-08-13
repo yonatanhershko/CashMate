@@ -3,16 +3,17 @@
     background-color: #f9f9f9;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    max-height: 200px; // Set a maximum height for the scrolling container
-    overflow-y: auto; // Enable vertical scrolling
-    overflow-x: hidden; // Hide horizontal scrolling if necessary
+    max-height: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-block-end: 1em;
 
     .activity-item {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: center;
         gap: 8px;
-        padding: 12px;
-        margin-bottom: 8px;
         background-color: #fff;
         border: 1px solid #ddd;
         border-radius: 6px;
@@ -21,8 +22,16 @@
         .activity-member-img {
             border-radius: 100%;
             display: block;
-            max-width: 100%;
-            border: 3px rgb(32, 32, 32) solid;
+            max-width: 24%;
+            height: 24%;
+            margin-inline-start: 5px;
+            border: 2px rgb(32, 32, 32) solid;
+        }
+
+        .activity-content{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         p {

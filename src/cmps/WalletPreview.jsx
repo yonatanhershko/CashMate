@@ -14,12 +14,11 @@ export function WalletPreview({ wallet }) {
         <section className="wallet-preview ">
             <div className="wallet-balance-container" >
                 <div className="wallet-balance">
-                    <h1>{wallet.title}</h1>
                     <h2><span>{wallet.currency}</span>{wallet.balance}  </h2>
+                    <p>{wallet.title}</p>
                 </div>
             </div>
-            <p>{wallet.description}</p>
-            {/* <img className="user-img" src={generateRobohashUrl(member._id)} alt={member.name} style={{ width: '100px', height: '100px' }} /> */}
+            <p>{wallet.description} or dashboard</p>
 
             <WalletDetails
                 wallet={wallet}
