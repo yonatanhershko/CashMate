@@ -43,26 +43,29 @@ export function WalletAction({ wallet, type, onClose }) {
     }
 
     return (
-        <section className="wallet-action-container">
-            <div className="close-btn-wrapper" onClick={onClose}>
-                <FontAwesomeIcon icon={faXmark} />
-            </div>
-            <h1>{type === 'pay' ? 'Payment' : 'Income'}</h1>
-            <input
-                type="number"
-                placeholder="How much..."
-                value={amount}
-                onChange={(e) => setAmount(e.target.value)}
-            />
-            <input
-                type="text"
-                placeholder="Add a description..."
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
-            />
-            <button onClick={onChangeBalance}>
-                <FontAwesomeIcon icon={faThumbsUp} />
-            </button>
-        </section>
+        <>
+            <div className="backdrop" onClick={onClose}></div>
+            <section className="wallet-action-container">
+                <div className="close-btn-wrapper" onClick={onClose}>
+                    <FontAwesomeIcon icon={faXmark} />
+                </div>
+                <h1>{type === 'pay' ? 'Payment' : 'Income'}</h1>
+                <input
+                    type="number"
+                    placeholder="How much..."
+                    value={amount}
+                    onChange={(e) => setAmount(e.target.value)}
+                />
+                <input
+                    type="text"
+                    placeholder="Add a description..."
+                    value={description}
+                    onChange={(e) => setDescription(e.target.value)}
+                />
+                <button onClick={onChangeBalance}>
+                    <FontAwesomeIcon icon={faThumbsUp} />
+                </button>
+            </section>
+        </>
     )
 }
