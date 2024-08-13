@@ -1,16 +1,18 @@
 import { useState } from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faThumbsUp } from "@fortawesome/free-solid-svg-icons"
+import { faThumbsUp, faXmark } from "@fortawesome/free-solid-svg-icons"
 import { updateWallet } from '../store/actions/wallet.actions'
+import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service'
 
 export function WalletAction({ wallet, type, onClose }) {
     const [amount, setAmount] = useState('')
     const [description, setDescription] = useState('')
-    console.log(wallet)
+
+    // console.log(wallet)
 
     async function onChangeBalance() {
         if (!amount) {
-            alert('Please enter an amount')
+            showErrorMsg('Please enter an amount')
             return
         }
 
@@ -42,6 +44,9 @@ export function WalletAction({ wallet, type, onClose }) {
 
     return (
         <section className="wallet-action-container">
+            <div className="close-btn-wrapper" onClick={onClose}>
+                <FontAwesomeIcon icon={faXmark} />
+            </div>
             <h1>{type === 'pay' ? 'Payment' : 'Income'}</h1>
             <input
                 type="number"
