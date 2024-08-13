@@ -5,10 +5,7 @@ export function WalletPreview({ wallet }) {
 
     const member = wallet.members
     
-    // function generateRobohashUrl(id) {
-    //     return `https://robohash.org/${id}?set=set1`
-    // }
-    // console.log(wallet)
+
 
     return (
         <section className="wallet-preview ">
@@ -24,7 +21,8 @@ export function WalletPreview({ wallet }) {
                 wallet={wallet}
             />
 
-            <MoneyTransfers />
+            <MoneyTransfers
+             wallet={wallet} />
 
         </section>
     )

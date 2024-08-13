@@ -34,13 +34,15 @@ async function remove(walletId) {
 async function save(wallet) {
     var savedWallet
     // console.log(wallet);
-
     const theme = wallet.style
     if (wallet._id) {
         const walletToSave = {
             _id: wallet._id,
             title: wallet.title,
-            style: { mode: theme.mode }
+            style: { mode: theme.mode },
+            balance: wallet.balance,
+            activities: wallet.activities
+
         }
         savedWallet = await storageService.put(STORAGE_KEY, walletToSave)
     } else {
