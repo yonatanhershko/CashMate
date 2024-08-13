@@ -1,9 +1,9 @@
 .wallet-preview {
-
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     flex-direction: column;
     align-items: center;
+    min-height: 80vh;
 
     .wallet-balance-container {
         display: flex;

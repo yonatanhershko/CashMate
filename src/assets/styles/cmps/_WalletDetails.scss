@@ -32,6 +32,10 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+
+            .activity-amount{
+                text-align: center;
+            }
         }
 
         p {
