@@ -6,6 +6,7 @@
     max-height: 200px;
     overflow-y: auto;
     overflow-x: hidden;
+    width: 100%;
     margin-block-end: 1em;
 
     .activity-item {
@@ -22,8 +23,8 @@
         .activity-member-img {
             border-radius: 100%;
             display: block;
-            max-width: 24%;
-            height: 24%;
+            max-width: 20%;
+            height: 20%;
             margin-inline-start: 5px;
             border: 2px rgb(32, 32, 32) solid;
         }

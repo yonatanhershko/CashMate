@@ -12,10 +12,10 @@ export function WalletPreview({ wallet }) {
             <div className="wallet-balance-container" >
                 <div className="wallet-balance">
                     <h2><span>{wallet.currency}</span>{wallet.balance}  </h2>
-                    <p>{wallet.title}</p>
+                    {/* <p>{wallet.title}</p> */}
                 </div>
             </div>
-            <p>{wallet.description} or dashboard</p>
+            {/* <p>{wallet.description} or dashboard</p> */}
 
             <WalletDetails
                 wallet={wallet}

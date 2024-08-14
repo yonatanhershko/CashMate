@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faThumbsUp, faXmark } from "@fortawesome/free-solid-svg-icons"
 import { updateWallet } from '../store/actions/wallet.actions'
@@ -7,9 +7,19 @@ import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service'
 export function WalletAction({ wallet, type, onClose }) {
     const [amount, setAmount] = useState('')
     const [description, setDescription] = useState('')
+    const [isActive, setIsActive] = useState(false)
+    const [isClosing, setIsClosing] = useState(false)
+    
+    useEffect(() => {
+        setIsActive(true)
+    }, [])
 
-    // console.log(wallet)
-
+    function handleClose() {
+        setIsClosing(true)
+        setTimeout(() => {
+            onClose()
+        }, 500) 
+    }
     async function onChangeBalance() {
         if (!amount) {
             showErrorMsg('Please enter an amount')
@@ -44,9 +54,9 @@ export function WalletAction({ wallet, type, onClose }) {
 
     return (
         <>
-            <div className="backdrop" onClick={onClose}></div>
-            <section className="wallet-action-container">
-                <div className="close-btn-wrapper" onClick={onClose}>
+            <div className={`backdrop ${isActive ? 'active' : ''} ${isClosing ? 'closing' : ''}`} onClick={handleClose}></div>
+            <section className={`wallet-action-container ${isActive ? 'active' : ''} ${isClosing ? 'closing' : ''}`}>
+                <div className="close-btn-wrapper" onClick={handleClose}>
                     <FontAwesomeIcon icon={faXmark} />
                 </div>
                 <h1>{type === 'pay' ? 'Payment' : 'Income'}</h1>

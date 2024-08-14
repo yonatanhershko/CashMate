@@ -9,15 +9,15 @@
         align-items: center;
         justify-content: center;
 
-        background-color: rgb(128, 6, 0);
+        border: 3px solid rgb(128, 0, 0);
         width: 5em;
         height: 5em;
-        border-radius: 4px;
-        transition: background-color 0.1s ease;
+        border-radius: 7px;
+        transition: border 0.1s ease;
         cursor: pointer;
 
         &:hover {
-            background-color: rgb(146, 21, 15);
+            border: 3px solid rgb(158, 15, 15);
         }
 
         .transfers-btn{
@@ -37,15 +37,15 @@
         align-items: center;
         justify-content: center;
 
-        background-color: green;
+        border: 3px solid green;
         width: 5em;
         height: 5em;
-        border-radius: 4px;
-        transition: background-color 0.1s ease;
+        border-radius: 7px;
+        transition: border 0.1s ease;
         cursor: pointer;
 
         &:hover {
-            background-color: rgb(15, 158, 15);
+            border: 3px solid rgb(15, 158, 15);
         }
 
         .transfers-btn{

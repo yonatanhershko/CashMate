@@ -7,7 +7,7 @@
 
     .wallet-balance-container {
         display: flex;
-        background-color: $bg-clr3;
+        background-color: var(--bg-clr3);
         border-radius: 10px;
         padding: 0 10px;
 
@@ -16,6 +16,10 @@
             justify-content: center;
             align-items: center;
             gap: 10px;
+
+            h2{
+                margin: 0;
+            }
         }
     }
 

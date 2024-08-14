@@ -1,15 +1,25 @@
 .wallet-action-container {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #ffffff;
-    border-radius: 15px;
-    padding: 30px;
-    width: 90%;
-    max-width: 400px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) translateY(-50vh);
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 30px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+
+  &.active {
+    animation: slideUp 0.5s ease forwards;
+  }
+
+  &.closing {
+    animation: slideDown 0.5s ease forwards;
+  }
     
     .close-btn-wrapper {
       position: absolute;
@@ -68,7 +78,7 @@
     }
   }
   
-  // Add this if you want a backdrop
+
   .backdrop {
     position: fixed;
     top: 0;
@@ -77,4 +87,38 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 999;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+  
+    &.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  
+    &.closing {
+      opacity: 0;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      transform: translate(-50%, -50%) translateY(50vh);
+      opacity: 0;
+    }
+    to {
+      transform: translate(-50%, -50%) translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideDown {
+    from {
+      transform: translate(-50%, -50%) translateY(0);
+      opacity: 1;
+    }
+    to {
+      transform: translate(-50%, -50%) translateY(50vh);
+      opacity: 0;
+    }
   }

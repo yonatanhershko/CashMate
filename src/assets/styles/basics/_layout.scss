@@ -1,18 +1,18 @@
 
-.main-layout {
-    display: grid;
-    grid-template-columns: minmax(40px, 1fr) minmax(auto, 1220px) minmax(40px, 1fr);
+// .main-layout {
+//     display: grid;
+//     grid-template-columns: minmax(40px, 1fr) minmax(auto, 1220px) minmax(40px, 1fr);
   
-  }
+//   }
   
-  .main-layout>*:not(.full) {
-    grid-column: 2;
-  }
+//   .main-layout>*:not(.full) {
+//     grid-column: 2;
+//   }
   
-  .main-layout>*.full {
-    grid-column: 1 / -1;
-  }
+//   .main-layout>*.full {
+//     grid-column: 1 / -1;
+//   }
   
-  .main-content-layout {
-    display: grid;
-  }
+//   .main-content-layout {
+//     display: grid;
+//   }

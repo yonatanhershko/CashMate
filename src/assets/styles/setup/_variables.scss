@@ -1,18 +1,20 @@
 // Colors
 
 //Light Colors
-$light-bg-clr1: #262626;
-$light-bg-clr2: #F2F1F0;
+$light-bg-clr1: #0D2531;
+$light-bg-clr2: #efefef;
+$light-bg-clr3: #74A6B1;
 
-$light-txt-clr1: #262626;
-$light-txt-clr2: #F2F1F0;
+$light-txt-clr1: #0D2531;
+$light-txt-clr2: #F2F5E4;
 
 //Dark Colors
-$dark-bg-clr1: #F2F1F0;
-$dark-bg-clr2: #262626;
+$dark-bg-clr1: #efefef;
+$dark-bg-clr2: #0D2531;
+$dark-bg-clr3: #325c68;
 
-$dark-txt-clr1: #F2F1F0;
-$dark-txt-clr2: #262626;
+$dark-txt-clr1: #efefef;
+$dark-txt-clr2: #0D2531;
 
 
 
@@ -20,6 +22,7 @@ $dark-txt-clr2: #262626;
 [data-theme='light'] {
   --bg-clr1: #{$light-bg-clr1};
   --bg-clr2: #{$light-bg-clr2};
+  --bg-clr3: #{$light-bg-clr3};
 
   --txt-clr1: #{$light-txt-clr1};
   --txt-clr2: #{$light-txt-clr2};
@@ -28,6 +31,7 @@ $dark-txt-clr2: #262626;
 [data-theme='dark'] {
   --bg-clr1: #{$dark-bg-clr1};
   --bg-clr2: #{$dark-bg-clr2};
+  --bg-clr3: #{$dark-bg-clr3};
 
   --txt-clr1: #{$dark-txt-clr1};
   --txt-clr2: #{$dark-txt-clr2};
@@ -44,4 +48,20 @@ $narrow-breakpoint: 720px;
 $normal-breakpoint: 960px;
 
 //colors to add 
-$bg-clr3: #f4e0cb;
+
+
+// Light Mode:
+
+// Background: #efefef (light beige)
+// Primary Text: #0D2531 (dark teal)
+// Secondary Text: #02750D (dark green)
+// Accent: #C6D144 (lime green)
+// Subtle Accent: #74A6B1 (muted blue-gray)
+
+// Dark Mode:
+
+// Background: #0D2531 (dark teal)
+// Primary Text: #efefef (light beige)
+// Secondary Text: #C6D144 (lime green)
+// Accent: #74A6B1 (muted blue-gray)
+// Subtle Accent: #02750D (dark green)
