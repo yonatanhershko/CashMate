@@ -5,6 +5,7 @@ const ACTIVITY_LIMIT = 30
 export function WalletDetails({ wallet }) {
     const walletActivities = wallet.activities || []
     const members = wallet.members || []
+
     // Sort all activities by date (latest to earliest)
     const sortedActivities = [...walletActivities].sort((a, b) => new Date(b.date) - new Date(a.date))
     // Limit activities to the most recent 30
@@ -46,16 +47,22 @@ export function WalletDetails({ wallet }) {
                     const member = memberMap[activity.memberId]
                     return (
                         <div key={index} className="activity-item">
-                            <img
-                                className="activity-member-img"
-                                src={generateRobohashUrl(member.id)}
-                                alt={`Member ${member.name}`}
-                                title={member.name}
-                            />
-                            <div className="activity-content">
-                                <p>{activity.description}</p>
-                                <span> {activity.type}<span className='activity-amount'>{activity.amount}</span></span>
-                                <span>{new Date(activity.date).toLocaleString()}</span>
+                            <div className='activity-img-info'>
+                                <img
+                                    className="activity-member-img"
+                                    src={generateRobohashUrl(member.id)}
+                                    alt={`Member ${member.name}`}
+                                    title={member.name}
+                                />
+                                <div className='activity-img-text'>
+                                    <p>{activity.description}</p>
+                                    <span>{new Date(activity.date).toLocaleString()}</span>
+                                </div>
+                            </div>
+
+                            <div className="activity-outcome">
+                                <span> {activity.amount}</span>
+                                <span className='activity-type'>{activity.type}</span>
                             </div>
                         </div>
                     )
