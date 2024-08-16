@@ -1,17 +1,18 @@
 .money-transfers-container {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 10px;
+    justify-content: space-evenly;
+    gap: 5px;
+    width: 100%;
 
     .transfers-pay {
         display: flex;
         align-items: center;
         justify-content: center;
 
-        border: 3px solid rgb(128, 0, 0);
-        width: 5em;
-        height: 5em;
+        border: 2px solid rgb(128, 0, 0);
+        width: 40%;
+        height: 4.5em;
         border-radius: 7px;
         transition: border 0.1s ease;
         cursor: pointer;
@@ -20,11 +21,11 @@
             border: 3px solid rgb(158, 15, 15);
         }
 
-        .transfers-btn{
+        .transfers-btn {
             display: flex;
             align-items: center;
             justify-content: center;
-    
+
             height: 20px;
             width: 20px;
             font-size: 20px;
@@ -36,10 +37,10 @@
         display: flex;
         align-items: center;
         justify-content: center;
-
-        border: 3px solid green;
-        width: 5em;
-        height: 5em;
+        
+        border: 2px solid green;
+        width: 40%;
+        height: 4.5em;
         border-radius: 7px;
         transition: border 0.1s ease;
         cursor: pointer;
@@ -48,11 +49,11 @@
             border: 3px solid rgb(15, 158, 15);
         }
 
-        .transfers-btn{
+        .transfers-btn {
             display: flex;
             align-items: center;
             justify-content: center;
-    
+
             height: 20px;
             width: 20px;
             font-size: 20px;

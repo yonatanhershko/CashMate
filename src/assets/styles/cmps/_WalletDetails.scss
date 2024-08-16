@@ -38,7 +38,9 @@
                 display: flex;
                 justify-content: flex-end;
                 flex-direction: column;
-                p{
+
+                .activity-description {
+                    font-family: hebrew-reg-font, sans-serif;
                     margin: 0;
                 }
             }

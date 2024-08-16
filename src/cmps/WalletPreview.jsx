@@ -13,7 +13,7 @@ export function WalletPreview({ wallet }) {
         <section className="wallet-preview ">
             <div className="wallet-balance-container" >
                 <h3>{wallet.title}</h3>
-                <p>Hello {member[0].name}</p>{/* by login user */}
+                <h4>Hello {member[0].name}</h4>{/* by login user */}
 
                 <div className="wallet-balance-bg">
                     <img className="wallet-bg-img"

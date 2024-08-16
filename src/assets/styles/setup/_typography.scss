@@ -2,6 +2,7 @@
     // font-family: caveat;
     // src: url(../../fonts/Caveat/Caveat-Regular.ttf);
 }
+
 @font-face {
     // font-family: montserrat;
     // src: url(../../fonts/Montserrat/Montserrat-Regular.ttf);
@@ -10,4 +11,19 @@
 @font-face {
     font-family: "hebrew-reg-font";
     src: url(../../../../public/img/fonts/yarden-regular-alefalefalef.woff) format("truetype");
-  }
+}
+
+@font-face {
+    font-family: "heebo-thin";
+    src: url(../../../../public/img/fonts/Heebo-Thin.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "heebo-regular";
+    src: url(../../../../public/img/fonts/Heebo-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "heebo-bold";
+    src: url(../../../../public/img/fonts/Heebo-Bold.ttf) format("truetype");
+}

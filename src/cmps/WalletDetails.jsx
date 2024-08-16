@@ -55,7 +55,7 @@ export function WalletDetails({ wallet }) {
                                     title={member.name}
                                 />
                                 <div className='activity-img-text'>
-                                    <p>{activity.description}</p>
+                                    <p className='activity-description'>{activity.description}</p>
                                     <span>{new Date(activity.date).toLocaleString()}</span>
                                 </div>
                             </div>
