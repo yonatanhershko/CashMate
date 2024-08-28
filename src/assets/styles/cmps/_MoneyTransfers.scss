@@ -10,15 +10,19 @@
         align-items: center;
         justify-content: center;
 
-        border: 2px solid rgb(128, 0, 0);
+        border: 2px solid var(--bg-clr3);
         width: 40%;
         height: 4.5em;
         border-radius: 7px;
         transition: border 0.1s ease;
         cursor: pointer;
 
+        @media (min-width:991px) {
+            width: 20%;
+        }
+
         &:hover {
-            border: 3px solid rgb(158, 15, 15);
+            border: 3px solid var(--bg-clr3);
         }
 
         .transfers-btn {
@@ -37,16 +41,20 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        
-        border: 2px solid green;
+
+        border: 2px solid var(--bg-clr3);
         width: 40%;
         height: 4.5em;
         border-radius: 7px;
         transition: border 0.1s ease;
         cursor: pointer;
 
+        @media (min-width:991px) {
+            width: 20%;
+        }
+
         &:hover {
-            border: 3px solid rgb(15, 158, 15);
+            border: 3px solid var(--bg-clr3);
         }
 
         .transfers-btn {

@@ -24,6 +24,13 @@
             background-color: var(--bg-clr3);
             border-radius: 10px;
 
+
+            @media (min-width:991px) {
+                width: 40%;
+                height: 160px;
+
+            }
+
             .wallet-bg-img {
                 width: 100%;
                 height: 57px;
@@ -67,7 +74,11 @@
     .bottom-line {
         width: 85%;
         border: 1px solid var(--txt-clr1);
+        @media (min-width:991px) {
+            width: 60%;
+            
 
+        }
     }
 
 }
