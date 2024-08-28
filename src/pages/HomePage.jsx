@@ -1,9 +1,10 @@
 
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { ChevronRight } from 'lucide-react'
 import img1 from '../assets/styles/imgs/icones/icon2.jpg'
 import img2 from '../assets/styles/imgs/icones/girl2.jpg'
 import img3 from '../assets/styles/imgs/icones/robot3.jpg'
+import homepageDec from '../assets/styles/imgs/homepage/dec-homepage.png'
 
 export function HomePage() {
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -27,6 +28,7 @@ export function HomePage() {
 
   return (
     <div className="home-page">
+      <img  className="homepage-dec" src={homepageDec} alt="" />
       <h1>Manage your Wallet</h1>
       
       <div className="gallery-container">

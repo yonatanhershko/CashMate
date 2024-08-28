@@ -1,21 +1,21 @@
-import { useState } from 'react';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
-import { WalletAction } from "./WalletAction";
+import { useState } from 'react'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons"
+import { WalletAction } from "./WalletAction"
 
 export function MoneyTransfers({ wallet }) {
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const [actionType, setActionType] = useState(null);
+    const [isModalOpen, setIsModalOpen] = useState(false)
+    const [actionType, setActionType] = useState(null)
     
     
     function openModal(type) {
-        setActionType(type);
-        setIsModalOpen(true);
+        setActionType(type)
+        setIsModalOpen(true)
     }
 
     function closeModal() {
-        setIsModalOpen(false);
-        setActionType(null);
+        setIsModalOpen(false)
+        setActionType(null)
     }
 
     return (
@@ -40,12 +40,5 @@ export function MoneyTransfers({ wallet }) {
                 />
             )}
         </>
-    );
+    )
 }
-
-{/* <input
-    className="money-transfers-text"
-    type="number" />
-<div className="transfers-action">
-    ⬅️
-</div> */}
