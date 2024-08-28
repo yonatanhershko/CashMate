@@ -35,13 +35,13 @@
             height: 145px;
 
             .main-imgs {
-                width: 6rem;
-                height: 6rem;
-                flex-shrink: 0;
-                border-radius: 0.5rem;
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                flex-shrink: 0;
+                width: 6rem;
+                height: 6rem;
+                border-radius: 0.5rem;
                 transition: all 0.3s ease;
 
                 img {
@@ -60,14 +60,14 @@
     }
 
     .create-wallet-btn {
+        display: flex;
+        align-items: center;
         background-color: white;
         color: black;
         font-weight: 600;
         padding: 0.5rem 1rem;
         border-radius: 9999px;
         margin-bottom: 1rem;
-        display: flex;
-        align-items: center;
         border: none;
         cursor: pointer;
         transition: background-color 0.3s ease;
