@@ -7,7 +7,7 @@ import { loadWallet, updateWallet } from '../store/actions/wallet.actions'
 export function WalletIndex() {
     const wallet = useSelector(storeState => storeState.walletModule.wallet)
            
-    const walletId = "3ZsGec"  // By user.wallet._id
+    const walletId = "66cf34eef6cff0ce09cfd168"  //wallet have more then 1 users
     const [theme, setTheme] = useState('')
 
     useEffect(() => {
@@ -45,7 +45,7 @@ export function WalletIndex() {
         }
     }
     
-    if (!wallet) return null
+    if (!wallet) return null    
     return (
         <main className="index">
             <label className="switch">

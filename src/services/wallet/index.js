@@ -65,14 +65,13 @@ const wallet = {
         }
     },
     activities: [
-        // Example activity
         {
             id: 'activity-1',
             type: 'add',
             amount: 100,
             date: new Date('2024-08-06T10:00:00'),
             description: 'Salary deposit',
-            memberId: 'member-1'  // Add this line to associate the activity with a member
+            memberId: 'member-1' 
 
         },
     ],
