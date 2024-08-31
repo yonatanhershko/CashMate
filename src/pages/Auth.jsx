@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 import { useNavigate, useParams } from "react-router-dom"
-import { LoginForm } from "../cmps/LoginForm.jsx";
-import { login, signup } from '../store/actions/user.actions.js';
+import { LoginForm } from "../cmps/LoginForm.jsx"
+import { login, signup } from '../store/actions/user.actions.js'
+import loginBg1 from '../assets/styles/imgs/login/login-bg1.png'
+import loginBg2 from '../assets/styles/imgs/login/login-bg2.png'
+
 
 export function Auth() {
     const path = window.location.pathname
@@ -33,7 +36,7 @@ export function Auth() {
             const user = isSignup === 'signup' ? await signup(newUser) : await login(newUser)
 
             if (user) {
-                navigate('/board')
+                navigate('/wallet')
             } else {
                 console.error('User info is not valid')
             }
@@ -52,13 +55,17 @@ export function Auth() {
     return (
         <section className="login">
             <section className="login-outer-container">
+
                 <section className="login-inner-container">
                     <article className="login-innermost-container">
+                        <img className="loginBg1" src={loginBg1} alt="" />
+                        <img className="loginBg2" src={loginBg2} alt="" />
+
                         <article className="black-box-container">
                             <div className="login-signup-container">
                                 <div className="login-header">
                                     <div className='logo-container'>
-                                        <span className='logo-text'>Trellife</span>
+                                        <span className='logo-text'>CashMate</span>
                                     </div>
                                     <h5>{isSignup === 'signup' ? 'Sign up to continue' : 'Log in to continue'}</h5>
                                 </div>

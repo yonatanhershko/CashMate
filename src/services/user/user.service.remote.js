@@ -11,8 +11,7 @@ export const userService = {
 	remove,
 	update,
 	getLoggedinUser,
-	saveLoggedinUser,
-	removeBoardFromFavorites
+	saveLoggedinUser,	
 }
 
 function getUsers() {
@@ -26,10 +25,6 @@ async function getById(userId) {
 
 function remove(userId) {
 	return httpService.delete(`user/${userId}`)
-}
-
-async function removeBoardFromFavorites(boardId) {
-	return httpService.post(`user/remove-board-from-favorites`, {boardId})
 }
 
 
