@@ -65,7 +65,6 @@ function saveLoggedinUser(user) {
 		fullname: user.fullname,
 		username: user.username,
 		imgUrl: user.imgUrl,
-		favorites: user.favorites
 	}
 	sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(user))
 	return user

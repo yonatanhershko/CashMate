@@ -9,7 +9,7 @@ export function WalletAction({ wallet, type, onClose }) {
     const [description, setDescription] = useState('')
     const [isActive, setIsActive] = useState(false)
     const [isClosing, setIsClosing] = useState(false)
-    
+
     useEffect(() => {
         setIsActive(true)
     }, [])
@@ -18,7 +18,7 @@ export function WalletAction({ wallet, type, onClose }) {
         setIsClosing(true)
         setTimeout(() => {
             onClose()
-        }, 500) 
+        }, 500)
     }
     async function onChangeBalance() {
         if (!amount) {

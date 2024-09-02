@@ -26,7 +26,7 @@ export function Auth() {
         const { fullname, username, password } = userInfo
 
         const newUser = { username, password }
-
+        console.log(newUser);
         if (isSignup) {
             newUser.fullname = fullname
             newUser.imgUrl = `https://robohash.org/${fullname}?set=set1`
@@ -34,6 +34,7 @@ export function Auth() {
 
         try {
             const user = isSignup === 'signup' ? await signup(newUser) : await login(newUser)
+            // console.log(user);
 
             if (user) {
                 navigate('/wallet')
