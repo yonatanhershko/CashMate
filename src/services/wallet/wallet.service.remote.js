@@ -1,48 +1,36 @@
-import { httpService } from '../http.service'
-
+import { httpService } from "../http.service";
+//info: for adding new users to te same wallet add "ownerId": ObjectId("..."),
+//   "sharedWith": [ObjectId("..."), ObjectId("...")], inside the wallet
 export const walletService = {
     query,
     getById,
     save,
     remove,
-    addWalletMsg
-}
+    addWalletMsg,
+};
 
 async function query() {
-    return httpService.get(`wallet`)
+    return httpService.get(`wallet`); // wallet - no routes matched location
 }
 
 function getById(walletId) {
-    return httpService.get(`wallet/${walletId}`)
+    return httpService.get(`wallet/${walletId}`);
 }
 
 async function remove(walletId) {
-    return httpService.delete(`wallet/${walletId}`)
+    return httpService.delete(`wallet/${walletId}`);
 }
 async function save(wallet) {
-    var savedWallet
-    const theme = wallet.style
-    // console.log(wallet)
+    var savedWallet;
     if (wallet._id) {
-        const walletToSave = {
-            _id: wallet._id,
-            title: wallet.title,
-            style: { mode: theme.mode },
-            balance: wallet.balance,
-            activities: wallet.activities
-
-        }
-        savedWallet = await httpService.put(`wallet/${wallet._id}`, walletToSave)
+        savedWallet = await httpService.put(`wallet/${wallet._id}`, wallet);
     } else {
-        const walletToSave = {
-            title: wallet.title
-        }
-        savedWallet = await httpService.post('wallet', walletToSave)
+        savedWallet = await httpService.post("wallet", wallet);
     }
-    return savedWallet
+    return savedWallet;
 }
 
 async function addWalletMsg(walletId, txt) {
-    const savedMsg = await httpService.post(`wallet/${walletId}/msg`, { txt })
-    return savedMsg
+    const savedMsg = await httpService.post(`wallet/${walletId}/msg`, { txt });
+    return savedMsg;
 }

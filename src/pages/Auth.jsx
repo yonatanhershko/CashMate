@@ -5,6 +5,15 @@ import { login, signup } from '../store/actions/user.actions.js'
 import loginBg1 from '../assets/styles/imgs/login/login-bg1.png'
 import loginBg2 from '../assets/styles/imgs/login/login-bg2.png'
 
+import { walletService } from '../services/wallet/wallet.service.remote.js'
+//add here to create a new wallet to new users (use the index)
+
+// const newWallet = walletService.getEmptyWallet()
+// newWallet.createdBy = user
+// newWallet.members.push(user)
+
+//and update the back (wallet service)
+
 
 export function Auth() {
     const path = window.location.pathname
@@ -34,7 +43,6 @@ export function Auth() {
 
         try {
             const user = isSignup === 'signup' ? await signup(newUser) : await login(newUser)
-            // console.log(user);
 
             if (user) {
                 navigate('/wallet')

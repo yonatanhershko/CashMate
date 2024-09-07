@@ -43,7 +43,7 @@ export function WalletAction({ wallet, type, onClose }) {
 
         try {
             await updateWallet(updatedWallet)
-            console.log(updatedWallet);
+            console.log(updatedWallet)
 
             onClose()
         } catch (error) {

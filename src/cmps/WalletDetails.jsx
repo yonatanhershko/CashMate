@@ -1,11 +1,14 @@
 import React, { useEffect } from 'react'
 import { updateWallet } from '../store/actions/wallet.actions'
+// import { userService } from '../services/user/index'
+
 const ACTIVITY_LIMIT = 30
 
 export function WalletDetails({ wallet }) {
     const walletActivities = wallet.activities || []
     const members = wallet.members || []
 
+    console.log(wallet)
     // Sort all activities by date (latest to earliest)
     const sortedActivities = [...walletActivities].sort((a, b) => new Date(b.date) - new Date(a.date))
     // Limit activities to the most recent 30
@@ -16,7 +19,7 @@ export function WalletDetails({ wallet }) {
     }, {})
 
     function generateRobohashUrl(id) {
-        return `https://robohash.org/${id}?set=set1`
+        return `https://robohash.org/${id}?set=set1`// members need to be users ?
     }
 
     //Delete old activities
