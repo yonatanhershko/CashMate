@@ -6,30 +6,29 @@ import { loadWallet, updateWallet } from '../store/actions/wallet.actions'
 
 export function WalletIndex() {
     const wallet = useSelector(storeState => storeState.walletModule.wallet)
-           
     const walletId = "66cf34eef6cff0ce09cfd168"  //wallet have more then 1 users
-    const [theme, setTheme] = useState('')
+    const [theme, setTheme] = useState('light') // needs to save to backend !
 
     useEffect(() => {
         loadWallet(walletId)
     }, [])
 
     useEffect(() => {
-        if (wallet) {
-            setTheme(wallet.style.mode)
-            document.body.setAttribute('data-theme', wallet.style.mode)
+        if (wallet && wallet.style) {
+            const mode = wallet.style.mode || 'light'  // Default to 'light' if mode is null
+            setTheme(mode)
+            document.body.setAttribute('data-theme', mode)
         }
     }, [wallet])
 
     async function switchTheme(e) {
         const newTheme = e.target.checked ? 'dark' : 'light'
-        // console.log(newTheme)
         
         if (wallet) {
             const updatedWallet = {
                 ...wallet,
                 style: {
-                    ...wallet.style,
+                    ...(wallet.style || {}),  // Use an empty object if wallet.style is null
                     mode: newTheme
                 }
             }
@@ -45,7 +44,8 @@ export function WalletIndex() {
         }
     }
     
-    if (!wallet) return null    
+    if (!wallet) return <div>Loading wallet...</div>  // Show a loading state
+    
     return (
         <main className="index">
             <label className="switch">
